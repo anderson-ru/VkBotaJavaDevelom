@@ -18,6 +18,9 @@ public class CommandManager {
         commands.put("Контакты", new Contacts("Контакты"));
         commands.put("СПО", new SPO("СПО"));
         commands.put("Заявка", new Request("Заявка"));
+        commands.put("Минимальные баллы", new MinBalls("Минимальные баллы"));
+        commands.put("Бакалавариат/специалитет", new AboutBacAndSpec("Бакалавариат/специалитет"));
+
 
     }
 
