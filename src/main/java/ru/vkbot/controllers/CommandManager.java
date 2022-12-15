@@ -17,6 +17,8 @@ public class CommandManager {
         commands.put("Об университете", new AboutUniversity("Об университете"));
         commands.put("Контакты", new Contacts("Контакты"));
         commands.put("СПО", new SPO("СПО"));
+        commands.put("Заявка", new Request("Заявка"));
+
 
     }
 
