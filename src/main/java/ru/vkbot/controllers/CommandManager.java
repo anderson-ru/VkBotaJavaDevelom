@@ -8,6 +8,7 @@ public class CommandManager {
     private final static HashMap<String,Command> commands = new HashMap<>(40);
 
     static {
+        commands.put("Начать", new MenuMain("Главное меню"));
         commands.put("Главное меню", new MenuMain("Главное меню"));
         commands.put("Поступление", new Incoming("Поступление"));
         commands.put("Возврат к главному разделу", new BackToMenuMain("Возврат к главному разделу"));
