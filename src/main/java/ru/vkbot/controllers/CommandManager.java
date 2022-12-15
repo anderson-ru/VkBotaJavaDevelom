@@ -16,6 +16,8 @@ public class CommandManager {
         commands.add(new Direct("Направления"));
         commands.add(new AboutUniversity("Об университете"));
         commands.add(new Contacts("Контакты"));
+        commands.add(new Request("Заявка"));
+
         //commands.add(new Weather("weather"));
 
     }
