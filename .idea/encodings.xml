@@ -6,7 +6,13 @@
     <file url="file://$PROJECT_DIR$/src/main/texts/about_pgups.txt" charset="windows-1251" />
     <file url="file://$PROJECT_DIR$/src/main/texts/bachspec.txt" charset="windows-1251" />
     <file url="file://$PROJECT_DIR$/src/main/texts/contacts.txt" charset="windows-1251" />
+    <file url="file://$PROJECT_DIR$/src/main/texts/date.txt" charset="windows-1251" />
+    <file url="file://$PROJECT_DIR$/src/main/texts/ex.txt" charset="windows-1251" />
+    <file url="file://$PROJECT_DIR$/src/main/texts/extra.txt" charset="windows-1251" />
     <file url="file://$PROJECT_DIR$/src/main/texts/min.txt" charset="windows-1251" />
+    <file url="file://$PROJECT_DIR$/src/main/texts/money.txt" charset="windows-1251" />
+    <file url="file://$PROJECT_DIR$/src/main/texts/ms.txt" charset="windows-1251" />
+    <file url="file://$PROJECT_DIR$/src/main/texts/phd.txt" charset="windows-1251" />
     <file url="file://$PROJECT_DIR$/src/main/texts/spo.txt" charset="windows-1251" />
   </component>
 </project>

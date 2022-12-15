@@ -18,7 +18,7 @@ public class VKSendMessenger {
         }
         try {
             vkCore.getVk().messages().send(vkCore.getActor())
-                            .message(msg).peerId(userId).randomId(new Random().nextInt(10000)).execute();
+                            .message(msg).userId(userId).randomId(new Random().nextInt(10000)).execute();
         } catch (ApiException | ClientException e) {
             e.printStackTrace();
         }
@@ -26,7 +26,7 @@ public class VKSendMessenger {
 
     public static void placeKeyboard(Keyboard myKeyboard, int peerId, String msg){
         try {
-            vkCore.getVk().messages().send(vkCore.getActor()).userId(peerId).message(msg)
+            vkCore.getVk().messages().send(vkCore.getActor()).peerId(peerId).message(msg)
                     .randomId(new Random().nextInt(10000)).keyboard(myKeyboard).execute();
         }
         catch (ClientException | ApiException e) {

@@ -8,8 +8,8 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 
-public class Contacts extends Command {
-    public Contacts(String name){
+public class ExtraEduc extends Command {
+    public ExtraEduc(String name){
         super(name);
     }
     @Override
@@ -17,7 +17,7 @@ public class Contacts extends Command {
         BufferedReader bufferedReader;
         StringBuilder sb = new StringBuilder();
         try {
-            bufferedReader = new BufferedReader( new FileReader("src/main/texts/contacts.txt"));
+            bufferedReader = new BufferedReader( new FileReader("src/main/texts/extra.txt"));
             String line;
             while((line = bufferedReader.readLine()) != null){
                 sb.append(line);

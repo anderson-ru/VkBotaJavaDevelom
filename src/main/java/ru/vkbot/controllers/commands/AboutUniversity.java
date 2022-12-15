@@ -5,7 +5,6 @@ import ru.vkbot.controllers.Command;
 import ru.vkbot.modules.VKSendMessenger;
 
 import java.io.BufferedReader;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 
@@ -17,12 +16,15 @@ public class AboutUniversity extends Command {
     @Override
     public void exec(Message message) {
         BufferedReader bufferedReader;
+        StringBuilder sb = new StringBuilder();
         try {
             bufferedReader = new BufferedReader( new FileReader("src/main/texts/about_pgups.txt"));
             String line;
             while((line = bufferedReader.readLine()) != null){
-                VKSendMessenger.sendMessage(line, message.getFromId());
+                sb.append(line);
+                sb.append("\n");
             }
+            VKSendMessenger.sendMessage(sb.toString(), message.getFromId());
         } catch (IOException e) {
                 e.printStackTrace();
         }

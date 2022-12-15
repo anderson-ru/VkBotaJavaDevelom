@@ -21,7 +21,12 @@ public class CommandManager {
         commands.put("Заявка", new Request("Заявка"));
         commands.put("Минимальные баллы", new MinBalls("Минимальные баллы"));
         commands.put("Бакалавариат/специалитет", new AboutBacAndSpec("Бакалавариат/специалитет"));
-
+        commands.put("Аспирантура", new Aspirantura("Аспирантура"));
+        commands.put("Магистратура", new Magistrate("Магистратура"));
+        commands.put("Вступительные испытания", new IntroductionTest("Вступительные испытания"));
+        commands.put("Платные услуги", new MoneyExpences("Платные услуги"));
+        commands.put("Дополнительные услуги", new ExtraEduc("Дополнительные услуги"));
+        commands.put("Даты приёма", new ImportantDates("Даты приёма"));
 
     }
 

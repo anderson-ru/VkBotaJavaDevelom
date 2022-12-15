@@ -18,9 +18,13 @@ public class AboutBacAndSpec extends Command {
         try {
             bufferedReader = new BufferedReader( new FileReader("src/main/texts/bachspec.txt"));
             String line;
+            StringBuilder sb = new StringBuilder();
+            int userId = message.getFromId();
             while((line = bufferedReader.readLine()) != null){
-                VKSendMessenger.sendMessage(line, message.getFromId());
+                sb.append(line);
+                sb.append("\n");
             }
+            VKSendMessenger.sendMessage(sb.toString(), userId);
         } catch (IOException e) {
             e.printStackTrace();
         }

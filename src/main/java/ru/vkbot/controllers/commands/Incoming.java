@@ -12,8 +12,6 @@ public class Incoming extends Command {
     }
     @Override
     public void exec(Message message) {
-        //new VKSendMessenger().sendMessage("Стартовая точка", message.getFromId());
-
         VKSendMessenger.placeKeyboard(KeyBoardIncoming.getKeyboard(), message.getFromId(), name);
     }
 }

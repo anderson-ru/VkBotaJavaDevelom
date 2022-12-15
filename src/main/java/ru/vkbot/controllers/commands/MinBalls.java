@@ -18,9 +18,13 @@ public class MinBalls extends Command {
         try {
             bufferedReader = new BufferedReader( new FileReader("src/main/texts/min.txt"));
             String line;
+            StringBuilder sb = new StringBuilder();
             while((line = bufferedReader.readLine()) != null){
-                VKSendMessenger.sendMessage(line, message.getFromId());
+                sb.append(line);
+                sb.append("\n");
             }
+            VKSendMessenger.sendMessage(sb.toString(), message.getFromId());
+
         } catch (IOException e) {
             e.printStackTrace();
         }
