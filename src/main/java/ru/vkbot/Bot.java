@@ -23,24 +23,8 @@ public class Bot {
 
         List<List<KeyboardButton>> allKey = new ArrayList<>();
         List<KeyboardButton> line1 = new ArrayList<>();
-        line1.add(
-                new KeyboardButton().
-                        setAction(
-                                new KeyboardButtonAction()
-                                        .setLabel("Привет")
-                                        .setType(TemplateActionTypeNames.TEXT)
-                                        )
-                                        .setColor(KeyboardButtonColor.POSITIVE)
-                        );
-        line1.add(
-                new KeyboardButton().
-                        setAction(
-                                new KeyboardButtonAction()
-                                        .setLabel("Кто я")
-                                        .setType(TemplateActionTypeNames.TEXT)
-                                        )
-                                        .setColor(KeyboardButtonColor.POSITIVE)
-                        );
+        line1.add(new KeyboardButton().setAction(new KeyboardButtonAction().setLabel("Привет").setType(TemplateActionTypeNames.TEXT)).setColor(KeyboardButtonColor.POSITIVE));
+        line1.add(new KeyboardButton().setAction(new KeyboardButtonAction().setLabel("Кто я").setType(TemplateActionTypeNames.TEXT)).setColor(KeyboardButtonColor.POSITIVE));
 
         // line1.add(new KeyboardButton().setAction(new KeyboardButtonAction().setLabel("Кто я?")).setType(KeyboardButtonActionType.TEXT).setColor(KeyboardButtonColor.POSITIVE));
         allKey.add(line1);
