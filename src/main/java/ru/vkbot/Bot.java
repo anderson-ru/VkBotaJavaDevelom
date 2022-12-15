@@ -1,74 +1,53 @@
-package ru.vkbot;
+/*package ru.vkbot;
 
-import com.vk.api.sdk.client.TransportClient;
 import com.vk.api.sdk.client.VkApiClient;
 import com.vk.api.sdk.client.actors.GroupActor;
 import com.vk.api.sdk.exceptions.ApiException;
 import com.vk.api.sdk.exceptions.ClientException;
-import com.vk.api.sdk.httpclient.HttpTransportClient;
 import com.vk.api.sdk.objects.messages.*;
 import com.vk.api.sdk.queries.messages.MessagesGetLongPollHistoryQuery;
+import ru.vkbot.modules.*;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
+import java.util.concurrent.atomic.AtomicBoolean;
 
 public class Bot {
-    public static void main(String[] args) throws ClientException, ApiException, InterruptedException
-    {
-        TransportClient transportClient = new HttpTransportClient();
-        VkApiClient vk = new VkApiClient(transportClient);
+    public static void main(String[] args) throws ClientException, ApiException, InterruptedException {
+        //TransportClient transportClient = new HttpTransportClient();
+        VKCore vkCore = new VKCore();
+        VkApiClient vk = vkCore.getVk();
         Random random = new Random();
-        Keyboard keyboard = new Keyboard();
 
-        List<List<KeyboardButton>> allKey = new ArrayList<>();
-        List<KeyboardButton> line1 = new ArrayList<>();
-        line1.add(
-                new KeyboardButton().
-                        setAction(
-                                new KeyboardButtonAction()
-                                        .setLabel("Привет")
-                                        .setType(TemplateActionTypeNames.TEXT)
-                                        )
-                                        .setColor(KeyboardButtonColor.POSITIVE)
-                        );
-        line1.add(
-                new KeyboardButton().
-                        setAction(
-                                new KeyboardButtonAction()
-                                        .setLabel("Кто я")
-                                        .setType(TemplateActionTypeNames.TEXT)
-                                        )
-                                        .setColor(KeyboardButtonColor.POSITIVE)
-                        );
-
-        // line1.add(new KeyboardButton().setAction(new KeyboardButtonAction().setLabel("Кто я?")).setType(KeyboardButtonActionType.TEXT).setColor(KeyboardButtonColor.POSITIVE));
-        allKey.add(line1);
-        keyboard.setButtons(allKey);
-        GroupActor actor = new GroupActor(217762775, "vk1.a.JVCk6wfsRPNF2mdilVhn6k6fN7Lf1qJM7-oAbyNA-BdlUzDtspVEW-UsBD7z0441QgjrQOp_Sv8UrcBq8PsTcgBbrqT5bZgChKOskNgAlmufc38b5KdnvfKO0eX_lVxU5QBqibT0GGEaAJ-e8LNBqO0MLzP0-Np4u7RrQ5_ZYcqpW-RPsxYP6PsDyaFy9Mxh8GhMRrESB2KqLSmKuPZ8tg");
-
+        GroupActor actor = VKCore.getActor();
         Integer ts = vk.messages().getLongPollServer(actor).execute().getTs();
-        while (true){
-            MessagesGetLongPollHistoryQuery historyQuery =  vk.messages().getLongPollHistory(actor).ts(ts);
+        AtomicBoolean switcher = new AtomicBoolean(true);
+
+        while (switcher.get()) {
+            MessagesGetLongPollHistoryQuery historyQuery = vk.messages().getLongPollHistory(actor).ts(ts);
             List<Message> messages = historyQuery.execute().getMessages().getItems();
-            if (!messages.isEmpty()){
+            if (!messages.isEmpty()) {
                 messages.forEach(message -> {
                     System.out.println(message.toString());
                     try {
-                        if (message.getText().equals("Привет")){
+                        if (message.getText().equals("Привет")) {
                             vk.messages().send(actor).message("Привет!").userId(message.getFromId()).randomId(random.nextInt(10000)).execute();
-                        }
-                        else if (message.getText().equals("Кто я?")) {
+                            vk.messages().send(actor).userId(message.getFromId()).randomId(random.nextInt(10000)).keyboard(VKKeybord.getKeyboard()).execute();
+                        } else if (message.getText().equals("Кто я?")) {
                             vk.messages().send(actor).message("Ты хороший человек.").userId(message.getFromId()).randomId(random.nextInt(10000)).execute();
-                        }
-                        else if (message.getText().equals("Кнопки")) {
-                            vk.messages().send(actor).message("А вот и они").userId(message.getFromId()).randomId(random.nextInt(10000)).keyboard(keyboard).execute();
-                        }
-                        else {
+                        } else if (message.getText().equals("Направления подготовки и специальности")) {
+                            vk.messages().send(actor).message("https://priem.pgups.ru/bakalavriat.php").userId(message.getFromId()).randomId(random.nextInt(10000)).execute();
+                        } else if (message.getText().equals("План приёма")) {
+                            vk.messages().send(actor).message("https://www.pgups.ru/upload/medialibrary/473/plan_priema_bak_spec_mag_2023.pdf").userId(message.getFromId()).randomId(random.nextInt(10000)).execute();
+                        } else if (message.getText().equals("Пока")) {
+                            vk.messages().send(actor).message("Пока").userId(message.getFromId()).randomId(random.nextInt(10000)).execute();
+                            switcher.set(false);
+                        } else {
                             vk.messages().send(actor).message("Я тебя не понял.").userId(message.getFromId()).randomId(random.nextInt(10000)).execute();
                         }
+                    } catch (ApiException | ClientException e) {
+                        e.printStackTrace();
                     }
-                    catch (ApiException | ClientException e) {e.printStackTrace();}
                 });
             }
             ts = vk.messages().getLongPollServer(actor).execute().getTs();
@@ -76,3 +55,4 @@ public class Bot {
         }
     }
 }
+*/

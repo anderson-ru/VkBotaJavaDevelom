@@ -9,6 +9,7 @@ public class CommandManager {
 
     static {
         commands.add(new MenuMain("Привет"));
+        commands.add(new MenuMain("Привет"));
         //commands.add(new Weather("weather"));
 
     }
