@@ -19,7 +19,6 @@ public class CommandManager {
         commands.put("СПО", new SPO("СПО"));
         commands.put("Заявка", new Request("Заявка"));
 
-
     }
 
     public static HashMap<String, Command> getCommands(){
