@@ -2,8 +2,11 @@ package ru.vkbot.modules;
 
 import com.vk.api.sdk.exceptions.ApiException;
 import com.vk.api.sdk.exceptions.ClientException;
+import com.vk.api.sdk.objects.messages.Keyboard;
+
 
 import java.util.Random;
+
 
 public class VKSendMessenger {
     public static VKCore vkCore = new VKCore();
@@ -16,9 +19,20 @@ public class VKSendMessenger {
         try {
             vkCore.getVk().messages().send(vkCore.getActor())
                             .message(msg).userId(userId).randomId(new Random().nextInt(10000)).execute();
-            //vkCore.getVk().messages().send(vkCore.getActor()).userId(peerId).message(msg).execute();
         } catch (ApiException | ClientException e) {
             e.printStackTrace();
         }
+    }
+
+    public void placeKeyboard(Keyboard myKeyboard, int peerId){
+        try {
+            vkCore.getVk().messages().send(vkCore.getActor()).userId(peerId)
+                    .randomId(new Random().nextInt(10000)).keyboard(myKeyboard).execute();
+        }
+        catch (ClientException | ApiException e) {
+            System.out.println("Здесь проблема!!!");
+            e.printStackTrace();
+        }
+
     }
 }

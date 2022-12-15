@@ -1,15 +1,14 @@
 package ru.vkbot.controllers;
 
 import ru.vkbot.controllers.commands.MenuMain;
-import ru.vkbot.modules.Command;
 
 import java.util.HashSet;
 
 public class CommandManager {
-    private static HashSet<Command> commands = new HashSet<>();
+    private final static HashSet<Command> commands = new HashSet<>();
 
     static {
-        commands.add(new MenuMain("Старт"));
+        commands.add(new MenuMain("Привет"));
         //commands.add(new Weather("weather"));
 
     }
