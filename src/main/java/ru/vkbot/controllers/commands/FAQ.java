@@ -27,7 +27,5 @@ public class FAQ extends Command {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
-        new VKSendMessenger().placeKeyboard(VKKeyBoardFAQ.getKeyboard(), message.getFromId(), name);
     }
 }
