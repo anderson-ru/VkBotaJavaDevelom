@@ -24,9 +24,9 @@ public class VKSendMessenger {
         }
     }
 
-    public void placeKeyboard(Keyboard myKeyboard, int peerId){
+    public void placeKeyboard(Keyboard myKeyboard, int peerId, String msg){
         try {
-            vkCore.getVk().messages().send(vkCore.getActor()).userId(peerId)
+            vkCore.getVk().messages().send(vkCore.getActor()).userId(peerId).message(msg)
                     .randomId(new Random().nextInt(10000)).keyboard(myKeyboard).execute();
         }
         catch (ClientException | ApiException e) {
