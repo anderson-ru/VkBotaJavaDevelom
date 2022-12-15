@@ -6,7 +6,7 @@ import com.vk.api.sdk.objects.messages.KeyboardButton;
 import java.util.ArrayList;
 import java.util.List;
 
-public class VKKeyBoardIncoming {
+public class KeyBoardIncoming {
     public static Keyboard getKeyboard(){
         Keyboard keyboard = new Keyboard();
         List<List<KeyboardButton>> Keys = new ArrayList<>();

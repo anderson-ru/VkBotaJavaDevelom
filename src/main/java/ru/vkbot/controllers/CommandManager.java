@@ -1,11 +1,7 @@
 package ru.vkbot.controllers;
 
-import ru.vkbot.controllers.commands.Incoming;
-import ru.vkbot.controllers.commands.MenuMain;
-import ru.vkbot.controllers.commands.BackToMenuMain;
-import ru.vkbot.controllers.commands.Education;
-import ru.vkbot.controllers.commands.FAQ;
-import ru.vkbot.controllers.commands.Direct;
+import ru.vkbot.controllers.commands.*;
+
 import java.util.HashSet;
 
 public class CommandManager {
@@ -18,6 +14,8 @@ public class CommandManager {
         commands.add(new Education("Образовательные услуги"));
         commands.add(new FAQ("Связь и FAQ"));
         commands.add(new Direct("Направления"));
+        commands.add(new AboutUniversity("Об университете"));
+        commands.add(new Contacts("Контакты"));
         //commands.add(new Weather("weather"));
 
     }
@@ -25,5 +23,4 @@ public class CommandManager {
     public static HashSet<Command> getCommands(){
         return commands;
     }
-    public static void addCommand(Command command) { commands.add(command);}
 }

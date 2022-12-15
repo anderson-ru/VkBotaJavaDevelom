@@ -12,10 +12,10 @@ public class KeyBoardMainMenu {
         List<List<KeyboardButton>> Keys = new ArrayList<>();
         List<KeyboardButton> line1 = new ArrayList<>();
         List<KeyboardButton> line2 = new ArrayList<>();
-        line1.add(ru.vkbot.keyboards.Keys.getKey("Поступление"));
-        line1.add(ru.vkbot.keyboards.Keys.getKey("Об университете"));
-        line2.add(ru.vkbot.keyboards.Keys.getKey("Образовательные услуги"));
-        line2.add(ru.vkbot.keyboards.Keys.getKey("Связь и FAQ"));
+        line1.add(VKKeys.getKey("Поступление"));
+        line1.add(VKKeys.getKey("Об университете"));
+        line2.add(VKKeys.getKey("Образовательные услуги"));
+        line2.add(VKKeys.getKey("Связь и FAQ"));
         Keys.add(line1);
         Keys.add(line2);
         keyboard.setButtons(Keys);
