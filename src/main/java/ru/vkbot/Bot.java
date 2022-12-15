@@ -1,4 +1,4 @@
-package ru.vkbot;
+/*package ru.vkbot;
 
 import com.vk.api.sdk.client.VkApiClient;
 import com.vk.api.sdk.client.actors.GroupActor;
@@ -55,3 +55,4 @@ public class Bot {
         }
     }
 }
+*/
