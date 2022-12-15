@@ -2,7 +2,6 @@ package ru.vkbot.controllers;
 
 import com.vk.api.sdk.objects.messages.Message;
 import ru.vkbot.controllers.commands.MenuMain;
-import ru.vkbot.modules.Command;
 
 import java.util.HashSet;
 

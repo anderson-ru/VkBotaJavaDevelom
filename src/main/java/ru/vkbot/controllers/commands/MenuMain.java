@@ -1,7 +1,8 @@
 package ru.vkbot.controllers.commands;
 
 import com.vk.api.sdk.objects.messages.Message;
-import ru.vkbot.modules.Command;
+import ru.vkbot.controllers.Command;
+import ru.vkbot.keyboards.VKKeyBoardMainMenu;
 import ru.vkbot.modules.VKSendMessenger;
 
 public class MenuMain extends Command {
@@ -12,5 +13,7 @@ public class MenuMain extends Command {
     @Override
     public void exec(Message message) {
         new VKSendMessenger().sendMessage("Стартовая точка", message.getFromId());
+        //VKKeyBoardMainMenu vkKeyBoardMainMenu = new VKKeyBoardMainMenu();
+        new VKSendMessenger().placeKeyboard(VKKeyBoardMainMenu.getKeyboard(), message.getFromId());
     }
 }

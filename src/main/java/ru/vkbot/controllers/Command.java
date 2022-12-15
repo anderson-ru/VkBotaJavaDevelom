@@ -1,4 +1,4 @@
-package ru.vkbot.modules;
+package ru.vkbot.controllers;
 
 import com.vk.api.sdk.objects.messages.Message;
 
