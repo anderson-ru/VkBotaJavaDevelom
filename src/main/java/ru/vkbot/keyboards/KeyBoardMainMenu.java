@@ -6,16 +6,16 @@ import com.vk.api.sdk.objects.messages.KeyboardButton;
 import java.util.ArrayList;
 import java.util.List;
 
-public class VKKeyBoardIncoming {
+public class KeyBoardMainMenu {
     public static Keyboard getKeyboard(){
         Keyboard keyboard = new Keyboard();
         List<List<KeyboardButton>> Keys = new ArrayList<>();
         List<KeyboardButton> line1 = new ArrayList<>();
         List<KeyboardButton> line2 = new ArrayList<>();
-        line1.add(VKKeys.getKey("Даты приёма"));
-        line1.add(VKKeys.getKey("Минимальные баллы"));
-        line2.add(VKKeys.getKey("Вступительные испытания"));
-        line2.add(VKKeys.getKey("Назад"));
+        line1.add(ru.vkbot.keyboards.Keys.getKey("Поступление"));
+        line1.add(ru.vkbot.keyboards.Keys.getKey("Об университете"));
+        line2.add(ru.vkbot.keyboards.Keys.getKey("Образовательные услуги"));
+        line2.add(ru.vkbot.keyboards.Keys.getKey("Связь и FAQ"));
         Keys.add(line1);
         Keys.add(line2);
         keyboard.setButtons(Keys);
