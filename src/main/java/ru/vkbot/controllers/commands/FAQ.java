@@ -19,10 +19,13 @@ public class FAQ extends Command {
         BufferedReader bufferedReader;
         try {
             bufferedReader = new BufferedReader( new FileReader("src/main/texts/FAQ.txt"));
+            StringBuilder sb = new StringBuilder();
             String line;
             while((line = bufferedReader.readLine()) != null){
-                VKSendMessenger.sendMessage(line, message.getFromId());
+                sb.append(line);
+                sb.append("\n");
             }
+            VKSendMessenger.sendMessage(sb.toString(), message.getFromId());
         } catch (IOException e) {
             e.printStackTrace();
         }
