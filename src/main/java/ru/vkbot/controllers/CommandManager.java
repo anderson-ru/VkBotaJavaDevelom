@@ -25,7 +25,7 @@ public class CommandManager {
         commands.put("Магистратура", new Magistrate("Магистратура"));
         commands.put("Вступительные испытания", new IntroductionTest("Вступительные испытания"));
         commands.put("Платные услуги", new MoneyExpences("Платные услуги"));
-        commands.put("Дополнительные услуги", new ExtraEduc("Дополнительные услуги"));
+        commands.put("Доп. образование", new ExtraEduc("Доп. образование"));
         commands.put("Даты приёма", new ImportantDates("Даты приёма"));
 
     }
