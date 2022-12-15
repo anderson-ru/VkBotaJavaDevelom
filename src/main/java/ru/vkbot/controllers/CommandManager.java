@@ -2,25 +2,25 @@ package ru.vkbot.controllers;
 
 import ru.vkbot.controllers.commands.*;
 
-import java.util.HashSet;
+import java.util.HashMap;
 
 public class CommandManager {
-    private final static HashSet<Command> commands = new HashSet<>();
+    private final static HashMap<String,Command> commands = new HashMap<>(40);
 
     static {
-        commands.add(new MenuMain("Главное меню"));
-        commands.add(new Incoming("Поступление"));
-        commands.add(new BackToMenuMain("Возврат к главному разделу"));
-        commands.add(new Education("Образовательные услуги"));
-        commands.add(new FAQ("Связь и FAQ"));
-        commands.add(new Direct("Направления"));
-        commands.add(new AboutUniversity("Об университете"));
-        commands.add(new Contacts("Контакты"));
-        //commands.add(new Weather("weather"));
+        commands.put("Главное меню", new MenuMain("Главное меню"));
+        commands.put("Поступление", new Incoming("Поступление"));
+        commands.put("Возврат к главному разделу", new BackToMenuMain("Возврат к главному разделу"));
+        commands.put("Образовательные услуги", new Education("Образовательные услуги"));
+        commands.put("Связь и FAQ", new FAQ("Связь и FAQ"));
+        commands.put("Направления", new Direct("Направления"));
+        commands.put("Об университете", new AboutUniversity("Об университете"));
+        commands.put("Контакты", new Contacts("Контакты"));
+        commands.put("СПО", new SPO("СПО"));
 
     }
 
-    public static HashSet<Command> getCommands(){
+    public static HashMap<String, Command> getCommands(){
         return commands;
     }
 }
