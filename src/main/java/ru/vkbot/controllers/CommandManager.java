@@ -12,7 +12,7 @@ public class CommandManager {
         commands.put("Поступление", new Incoming("Поступление"));
         commands.put("Возврат к главному разделу", new BackToMenuMain("Возврат к главному разделу"));
         commands.put("Образовательные услуги", new Education("Образовательные услуги"));
-        commands.put("Связь и FAQ", new FAQ("Связь и FAQ"));
+        commands.put("FAQ", new FAQ("FAQ"));
         commands.put("Направления", new Direct("Направления"));
         commands.put("Об университете", new AboutUniversity("Об университете"));
         commands.put("Контакты", new Contacts("Контакты"));
