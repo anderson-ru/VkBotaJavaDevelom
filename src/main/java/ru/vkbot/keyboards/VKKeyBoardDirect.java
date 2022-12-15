@@ -15,6 +15,7 @@ public class VKKeyBoardDirect {
         line1.add(VKKeys.getKey("Бакалавариат/специалитет"));
         line1.add(VKKeys.getKey("Магистратура"));
         line2.add(VKKeys.getKey("Аспирантура"));
+        line2.add(VKKeys.getKey("СПО"));
         line2.add(VKKeys.getKey("Возврат к главному разделу"));
         Keys.add(line1);
         Keys.add(line2);
