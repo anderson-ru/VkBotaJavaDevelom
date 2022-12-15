@@ -1,5 +1,6 @@
 package ru.vkbot.controllers;
 
+import ru.vkbot.controllers.commands.AboutUniversity;
 import ru.vkbot.controllers.commands.Incoming;
 import ru.vkbot.controllers.commands.MenuMain;
 
@@ -11,6 +12,7 @@ public class CommandManager {
     static {
         commands.add(new MenuMain("Старт"));
         commands.add(new Incoming("Поступление"));
+        commands.add(new AboutUniversity("Об университете"));
         //commands.add(new Weather("weather"));
 
     }
