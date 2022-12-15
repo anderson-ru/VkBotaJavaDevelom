@@ -16,6 +16,6 @@ public class ConnectAndFAQ extends Command {
     }
     @Override
     public void exec(Message message) {
-        new VKSendMessenger().placeKeyboard(VKKeyBoardFAQ.getKeyboard(), message.getFromId(), name);
+        VKSendMessenger.placeKeyboard(VKKeyBoardFAQ.getKeyboard(), message.getFromId(), name);
     }
 }

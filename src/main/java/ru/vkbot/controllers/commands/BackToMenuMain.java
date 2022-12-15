@@ -12,6 +12,6 @@ public class BackToMenuMain extends Command {
     }
     @Override
     public void exec(Message message) {
-        new VKSendMessenger().placeKeyboard(KeyBoardMainMenu.getKeyboard(), message.getFromId(), name);
+        VKSendMessenger.placeKeyboard(KeyBoardMainMenu.getKeyboard(), message.getFromId(), name);
     }
 }

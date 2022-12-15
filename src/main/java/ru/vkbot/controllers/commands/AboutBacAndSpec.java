@@ -15,12 +15,11 @@ public class AboutBacAndSpec extends Command {
     @Override
     public void exec(Message message) {
         BufferedReader bufferedReader;
-        VKSendMessenger vkSendMessenger = new VKSendMessenger();
         try {
             bufferedReader = new BufferedReader( new FileReader("src/main/texts/bachspec.txt"));
             String line;
             while((line = bufferedReader.readLine()) != null){
-                vkSendMessenger.sendMessage(line, message.getFromId());
+                VKSendMessenger.sendMessage(line, message.getFromId());
             }
         } catch (IOException e) {
             e.printStackTrace();

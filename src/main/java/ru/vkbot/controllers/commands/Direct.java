@@ -12,8 +12,6 @@ public class Direct extends Command {
     }
     @Override
     public void exec(Message message) {
-        //new VKSendMessenger().sendMessage("Стартовая точка", message.getFromId());
-
-        new VKSendMessenger().placeKeyboard(VKKeyBoardDirect.getKeyboard(), message.getFromId(), name);
+        VKSendMessenger.placeKeyboard(VKKeyBoardDirect.getKeyboard(), message.getFromId(), name);
     }
 }

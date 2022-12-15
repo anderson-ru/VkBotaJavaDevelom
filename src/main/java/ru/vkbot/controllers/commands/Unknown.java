@@ -11,6 +11,6 @@ public class Unknown extends Command {
     }
     @Override
     public void exec(Message message) {
-        new VKSendMessenger().sendMessage(name, message.getFromId());
+        VKSendMessenger.sendMessage(name, message.getFromId());
     }
 }

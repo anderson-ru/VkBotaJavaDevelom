@@ -14,6 +14,6 @@ public class MenuMain extends Command {
     public void exec(Message message) {
         //new VKSendMessenger().sendMessage("Стартовая точка", message.getFromId());
 
-        new VKSendMessenger().placeKeyboard(KeyBoardMainMenu.getKeyboard(), message.getFromId(), name);
+        VKSendMessenger.placeKeyboard(KeyBoardMainMenu.getKeyboard(), message.getFromId(), name);
     }
 }

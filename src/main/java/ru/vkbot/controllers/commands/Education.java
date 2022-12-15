@@ -12,8 +12,6 @@ public class Education extends Command {
     }
     @Override
     public void exec(Message message) {
-        //new VKSendMessenger().sendMessage("Стартовая точка", message.getFromId());
-
-        new VKSendMessenger().placeKeyboard(VKKeyBoardEducation.getKeyboard(), message.getFromId(), name);
+        VKSendMessenger.placeKeyboard(VKKeyBoardEducation.getKeyboard(), message.getFromId(), name);
     }
 }

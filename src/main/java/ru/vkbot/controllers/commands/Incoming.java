@@ -14,6 +14,6 @@ public class Incoming extends Command {
     public void exec(Message message) {
         //new VKSendMessenger().sendMessage("Стартовая точка", message.getFromId());
 
-        new VKSendMessenger().placeKeyboard(KeyBoardIncoming.getKeyboard(), message.getFromId(), name);
+        VKSendMessenger.placeKeyboard(KeyBoardIncoming.getKeyboard(), message.getFromId(), name);
     }
 }

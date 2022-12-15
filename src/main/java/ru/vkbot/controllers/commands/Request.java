@@ -11,8 +11,6 @@ public class Request extends Command {
     }
     @Override
     public void exec(Message message) {
-        //new VKSendMessenger().sendMessage("Стартовая точка", message.getFromId());
-
-        new VKSendMessenger().sendMessage("Запрос от https://vk.com/id" + message.getFromId(), 108136079);
+        VKSendMessenger.sendMessage("Запрос от https://vk.com/id" + message.getFromId(), 108136079);
     }
 }
